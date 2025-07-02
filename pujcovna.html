@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopůjčovna - Road Rescue Service</title>
+    
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Navigation Script -->
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle">
+        <span class="menu-icon">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="menu-close" id="menuClose">
+            <i class="material-icons">close</i>
+        </button>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="autoservis.html">AUTOSERVIS</a></li>
+            <li><a href="mobilnis.html">MOBILNÍ AUTOSERVIS</a></li>
+            <li><a href="pujcovna.html">AUTOPŮJČOVNA</a></li>
+            <li><a href="cenik.html">CENÍK</a></li>
+            <li><a href="tym.html">TÝM</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <img src="img/logo.png" alt="Road Rescue Service" class="logo">
+                    <h1 class="company-name">AUTOPŮJČOVNA</h1>
+                    <div class="contact-info">
+                        <p>PŮJČENÍ NÁHRADNÍHO VOZIDLA</p>
+                        <h1>+420 737 998 496</h1>
+                        <p>roadrescueservice@gmail.com</p>
+                    </div>
+                    <div class="warning-strip"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Car Rental Section -->
+        <div class="rental-section">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="rental-content">
+                        <div class="mdl-grid">
+                            <!-- Car Image Section -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                                <div class="car-showcase-card">
+                                    <div class="car-image-container">
+                                        <img src="img/fabia pujcovna 2.webp" alt="Škoda Fabia" class="car-image">
+                                        <div class="car-badge">
+                                            <span class="car-model">ŠKODA FABIA I</span>
+                                            <span class="car-power">1.2 HTP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Car Details Section -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                                <div class="car-details-card">
+                                    <h2 class="car-title">ŠKODA FABIA I <span class="car-specs">1.2 HTP · 40kW</span></h2>
+                                    
+                                    <div class="car-features">
+                                        <p class="features-text">manuální převodovka, rádio s bluetooth, dálniční matrice, ISOFX</p>
+                                    </div>
+                                    
+                                    <div class="pricing-section">
+                                        <div class="price-highlight">
+                                            <h3>400Kč/den</h3>
+                                            <p class="price-note">vratná záloha 3000.00Kč</p>
+                                        </div>
+                                        
+                                        <div class="contact-cta">
+                                            <button class="rental-btn">
+                                                <i class="material-icons">phone</i>
+                                                REZERVOVAT NYNÍ
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Services Section -->
+        <div class="additional-services-section">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h2 style="text-align: center; color: var(--dark-navy); font-family: 'Bebas Neue', cursive; font-size: 36px; margin-bottom: 40px;">DALŠÍ SLUŽBY</h2>
+                    
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+                            <div class="mdl-card mdl-shadow--2dp service-card">
+                                <div class="service-card-content">
+                                    <i class="material-icons service-icon">event_available</i>
+                                    <h3>FLEXIBILNÍ PŮJČENÍ</h3>
+                                    <p>Půjčení na dny, týdny či měsíce. Přizpůsobíme se vašim potřebám a nabídneme individuální řešení.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+                            <div class="mdl-card mdl-shadow--2dp service-card">
+                                <div class="service-card-content">
+                                    <i class="material-icons service-icon">local_gas_station</i>
+                                    <h3>VČETNĚ PALIVA</h3>
+                                    <p>Vozidlo předáváme s plnou nádrží paliva. Po vrácení stačí doplnit na původní úroveň.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+                            <div class="mdl-card mdl-shadow--2dp service-card">
+                                <div class="service-card-content">
+                                    <i class="material-icons service-icon">verified_user</i>
+                                    <h3>POJIŠTĚNÍ</h3>
+                                    <p>Všechna vozidla jsou plně pojištěna. V případě nehody vás provedeme celým procesem likvidace.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h2 class="footer-title">Road Rescue Service</h2>
+                    <p class="footer-address">
+                        <i class="material-icons">location_on</i>
+                        Pražská 900, Mníšek pod Brdy, 252 10
+                    </p>
+                    <p class="footer-detail">
+                        <strong>hala č. 330</strong> Mníšek pod Brdy, Závodí<br>
+                        <span class="footer-coords">souřadnice: 49.8711°N, 14.2691°E chodník za Kauflandem</span>
+                    </p>
+                    <p class="footer-phone">
+                        <i class="material-icons">phone</i>
+                        +420 737 998 496
+                    </p>
+                    <p class="footer-email">
+                        <i class="material-icons">email</i>
+                        roadrescueservice@gmail.com
+                    </p>
+                    <p class="footer-social">
+                        <i class="material-icons">facebook</i>
+                        @ROAD RESCUE SERVICE
+                    </p>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-map">
+                    <img src="img/mapa_areal.webp" alt="Mapa areálu" class="footer-map-image">
+                </div>
+                
+                <!-- Partners -->
+                <div class="footer-partners">
+                    <div class="partner-logo">
+                        <img src="img/jm.webp" alt="J+M Autodíly">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="img/eurogarage.webp" alt="Eurogarage">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Road Rescue Service. Všechna práva vyhrazena.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuClose = document.getElementById('menuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body;
+
+        // Open menu
+        menuToggle.addEventListener('click', () => {
+            sidebarMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.style.overflow = 'hidden';
+        });
+
+        // Close menu
+        function closeMenu() {
+            sidebarMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

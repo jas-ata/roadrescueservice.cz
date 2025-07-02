@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Road Rescue Service</title>
+    
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Navigation Script -->
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle">
+        <span class="menu-icon">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="menu-close" id="menuClose">
+            <i class="material-icons">close</i>
+        </button>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="autoservis.html">AUTOSERVIS</a></li>
+            <li><a href="mobilnis.html">MOBILNÍ AUTOSERVIS</a></li>
+            <li><a href="pujcovna.html">AUTOPŮJČOVNA</a></li>
+            <li><a href="cenik.html">CENÍK</a></li>
+            <li><a href="tym.html">TÝM</a></li>
+            <li><a href="kontakt.html">KONTAKT</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <img src="img/logo.png" alt="Road Rescue Service" class="logo">
+                    <h1 class="company-name">KONTAKT</h1>
+                    <div class="contact-info">
+                        <p>JSME TU PRO VÁS</p>
+                        <h1>+420 737 998 496</h1>
+                        <p>roadrescueservice@gmail.com</p>
+                    </div>
+                    <div class="warning-strip"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="mdl-grid">
+                <!-- Contact Form -->
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <div class="contact-form-card">
+                        <h2>NAPIŠTE NÁM</h2>
+                        
+                        <form id="contactForm" method="POST" action="send-email.php">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="name" name="name" required>
+                                <label class="mdl-textfield__label" for="name">Vaše jméno</label>
+                            </div>
+                            
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="email" id="email" name="email" required>
+                                <label class="mdl-textfield__label" for="email">Váš email</label>
+                            </div>
+                            
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="tel" id="phone" name="phone">
+                                <label class="mdl-textfield__label" for="phone">Telefon</label>
+                            </div>
+                            
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="subject" name="subject" required>
+                                <label class="mdl-textfield__label" for="subject">Předmět</label>
+                            </div>
+                            
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <textarea class="mdl-textfield__input" rows="5" id="message" name="message" required></textarea>
+                                <label class="mdl-textfield__label" for="message">Vaše zpráva</label>
+                            </div>
+                            
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored contact-submit-btn">
+                                <i class="material-icons">send</i>
+                                ODESLAT ZPRÁVU
+                            </button>
+                        </form>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <div class="contact-info-card">
+                        <h2>KONTAKTNÍ ÚDAJE</h2>
+                        
+                        <div class="contact-detail-item">
+                            <i class="material-icons">location_on</i>
+                            <div>
+                                <h3>ADRESA</h3>
+                                <p>Pražská 900, Mníšek pod Brdy, 252 10</p>
+                                <p><strong>hala č. 330</strong> Mníšek pod Brdy, Závodí</p>
+                                <p class="contact-coords">souřadnice: 49.8711°N, 14.2691°E<br>chodník za Kauflandem</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <i class="material-icons">phone</i>
+                            <div>
+                                <h3>TELEFON</h3>
+                                <p class="contact-phone-large">+420 737 998 496</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <i class="material-icons">email</i>
+                            <div>
+                                <h3>EMAIL</h3>
+                                <p>roadrescueservice@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <i class="material-icons">access_time</i>
+                            <div>
+                                <h3>PROVOZNÍ DOBA</h3>
+                                <p>Po - Pá: 8:00 - 18:00</p>
+                                <p>So: 9:00 - 14:00</p>
+                                <p>Ne: Zavřeno</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <i class="material-icons">facebook</i>
+                            <div>
+                                <h3>SOCIÁLNÍ SÍTĚ</h3>
+                                <p>@ROAD RESCUE SERVICE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="contact-map-card">
+                        <h2>NAJDETE NÁS</h2>
+                        <div class="contact-map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10285.665687447863!2d14.279194!3d49.872206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9f31b63a165d%3A0x4e7a8f512b56693e!2zUHJhxb5za8OhIDkwMCwgMjUyIDEwIE1uw63FoWVrIHBvZCBCcmR5LCDEjGVza28!5e0!3m2!1scs!2sus!4v1751121719522!5m2!1scs!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h2 class="footer-title">Road Rescue Service</h2>
+                    <p class="footer-address">
+                        <i class="material-icons">location_on</i>
+                        Pražská 900, Mníšek pod Brdy, 252 10
+                    </p>
+                    <p class="footer-detail">
+                        <strong>hala č. 330</strong> Mníšek pod Brdy, Závodí<br>
+                        <span class="footer-coords">souřadnice: 49.8711°N, 14.2691°E chodník za Kauflandem</span>
+                    </p>
+                    <p class="footer-phone">
+                        <i class="material-icons">phone</i>
+                        +420 737 998 496
+                    </p>
+                    <p class="footer-email">
+                        <i class="material-icons">email</i>
+                        roadrescueservice@gmail.com
+                    </p>
+                    <p class="footer-social">
+                        <i class="material-icons">facebook</i>
+                        @ROAD RESCUE SERVICE
+                    </p>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-map">
+                    <img src="img/mapa_areal.webp" alt="Mapa areálu" class="footer-map-image">
+                </div>
+                
+                <!-- Partners -->
+                <div class="footer-partners">
+                    <div class="partner-logo">
+                        <img src="img/jm.webp" alt="J+M Autodíly">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="img/eurogarage.webp" alt="Eurogarage">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Road Rescue Service. Všechna práva vyhrazena.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Contact Form Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('.contact-submit-btn');
+            const messageDiv = document.getElementById('formMessage');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="material-icons">hourglass_empty</i> ODESÍLÁM...';
+            
+            fetch('send-email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.innerHTML = '<div class="success-message"><i class="material-icons">check_circle</i> Zpráva byla úspěšně odeslána!</div>';
+                    this.reset();
+                } else {
+                    messageDiv.innerHTML = '<div class="error-message"><i class="material-icons">error</i> ' + data.message + '</div>';
+                }
+            })
+            .catch(error => {
+                messageDiv.innerHTML = '<div class="error-message"><i class="material-icons">error</i> Chyba při odesílání zprávy. Zkuste to prosím znovu.</div>';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="material-icons">send</i> ODESLAT ZPRÁVU';
+            });
+        });
+    </script>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuClose = document.getElementById('menuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body;
+
+        // Open menu
+        menuToggle.addEventListener('click', () => {
+            sidebarMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.style.overflow = 'hidden';
+        });
+
+        // Close menu
+        function closeMenu() {
+            sidebarMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
