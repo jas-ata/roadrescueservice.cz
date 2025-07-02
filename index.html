@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Road Rescue Service - Servis a diagnostika vozů všech značek</title>
     
     <!-- Material Design Lite -->
@@ -172,12 +172,12 @@
         const body = document.body;
         
         // Open menu
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
-                sidebarMenu.classList.add('active');
-                menuOverlay.classList.add('active');
-                body.classList.add('menu-open');
-            });
+        function openMenu() {
+            sidebarMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.classList.add('menu-open');
+            menuToggle.style.opacity = '0';
+            menuToggle.style.pointerEvents = 'none';
         }
         
         // Close menu
@@ -185,6 +185,13 @@
             sidebarMenu.classList.remove('active');
             menuOverlay.classList.remove('active');
             body.classList.remove('menu-open');
+            menuToggle.style.opacity = '1';
+            menuToggle.style.pointerEvents = 'auto';
+        }
+        
+        // Event listeners
+        if (menuToggle) {
+            menuToggle.addEventListener('click', openMenu);
         }
         
         if (menuClose) {
@@ -212,6 +219,17 @@
             if (link.getAttribute('href') === currentPage) {
                 link.parentElement.classList.add('active');
             }
+        });
+        
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            }, 250);
         });
     });
     </script>
