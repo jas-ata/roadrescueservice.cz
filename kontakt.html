@@ -82,12 +82,6 @@
             font-weight: 400 !important;
         }
         
-        /* Hide send icon on mobile devices */
-        @media (max-width: 768px) {
-            .contact-submit-btn .material-icons {
-                display: none !important;
-            }
-        }
     </style>
     
     <!-- Navigation Script -->
@@ -174,7 +168,6 @@
                             </div>
                             
                             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored contact-submit-btn">
-                                <i class="material-icons">send</i>
                                 ODESLAT ZPRÁVU
                             </button>
                         </form>
@@ -389,7 +382,7 @@
             const messageDiv = document.getElementById('formMessage');
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="material-icons">hourglass_empty</i> ODESÍLÁM...';
+            submitBtn.innerHTML = 'ODESÍLÁM...';
             
             fetch('send-email-simple.php', {
                 method: 'POST',
@@ -409,7 +402,7 @@
             })
             .finally(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="material-icons">send</i> ODESLAT ZPRÁVU';
+                submitBtn.innerHTML = 'ODESLAT ZPRÁVU';
             });
         });
     </script>
