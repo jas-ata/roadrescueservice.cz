@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(npm i:*)",
+      "Bash(sudo npm i -g @anthropic-ai/claude-code)",
+      "Bash(for:*)",
+      "Bash(do convert \"$file\" \"$file%.webp.jpg\")",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(sed:*)"
     ],
     "deny": []
   }

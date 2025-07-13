@@ -13,10 +13,75 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Form color override - must be after MDL -->
+    <style>
+        /* Ultimate MDL override - loaded after all other CSS */
+        .contact-form-card .mdl-textfield .mdl-textfield__label,
+        .contact-form-card .mdl-textfield.mdl-js-textfield .mdl-textfield__label,
+        .contact-form-card .mdl-textfield--floating-label .mdl-textfield__label {
+            color: #95a5a6 !important;
+        }
+        
+        .contact-form-card .mdl-textfield .mdl-textfield__input,
+        .contact-form-card .mdl-textfield.mdl-js-textfield .mdl-textfield__input,
+        .contact-form-card .mdl-textfield--floating-label .mdl-textfield__input {
+            border-bottom-color: #95a5a6 !important;
+            color: #2c3e50 !important;
+        }
+        
+        /* Focused state */
+        .contact-form-card .mdl-textfield.is-focused .mdl-textfield__label {
+            color: #f39c12 !important;
+        }
+        
+        .contact-form-card .mdl-textfield.is-focused .mdl-textfield__input {
+            border-bottom-color: #f1c40f !important;
+            border-bottom-width: 2px !important;
+        }
+        
+        /* The animated underline */
+        .contact-form-card .mdl-textfield .mdl-textfield__label::after {
+            background-color: #f1c40f !important;
+        }
+        
+        /* Dirty (filled) state */
+        .contact-form-card .mdl-textfield.is-dirty:not(.is-focused) .mdl-textfield__label {
+            color: #7f8c8d !important;
+        }
+        
+        /* Remove any box-shadows that might be red */
+        .contact-form-card .mdl-textfield .mdl-textfield__input {
+            box-shadow: none !important;
+        }
+        
+        /* Override any inline styles */
+        .contact-form-card .mdl-textfield [style] {
+            color: #95a5a6 !important;
+            border-color: #95a5a6 !important;
+        }
+        
+        /* Simple universal font fix for ALL form inputs */
+        .contact-form-card * {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+        }
+        
+        .contact-form-card .mdl-textfield__input {
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            outline: none !important;
+        }
+        
+        .contact-form-card .mdl-textfield__label {
+            font-size: 16px !important;
+            font-weight: 400 !important;
+        }
+    </style>
     
     <!-- Navigation Script -->
 </head>
@@ -87,7 +152,7 @@
                             </div>
                             
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="tel" id="phone" name="phone">
+                                <input class="mdl-textfield__input" type="text" id="phone" name="phone" pattern="[+]?[0-9\s\-()]{9,15}" inputmode="tel">
                                 <label class="mdl-textfield__label" for="phone">Telefon</label>
                             </div>
                             
@@ -153,10 +218,10 @@
                         </div>
                         
                         <div class="contact-detail-item">
-                            <i class="material-icons">facebook</i>
+                            <i class="material-icons">camera_alt</i>
                             <div>
-                                <h3>SOCIÁLNÍ SÍTĚ</h3>
-                                <p>@ROAD RESCUE SERVICE</p>
+                                <h3>INSTAGRAM</h3>
+                                <p><a href="https://www.instagram.com/rrs_cz/" target="_blank" style="color: var(--bright-red); text-decoration: none;">@rrs_cz</a></p>
                             </div>
                         </div>
                     </div>
@@ -199,8 +264,8 @@
                         roadrescueservice@gmail.com
                     </p>
                     <p class="footer-social">
-                        <i class="material-icons">facebook</i>
-                        @ROAD RESCUE SERVICE
+                        <i class="material-icons">camera_alt</i>
+                        <a href="https://www.instagram.com/rrs_cz/" target="_blank" style="color: inherit; text-decoration: none;">@rrs_cz</a>
                     </p>
                 </div>
                 
@@ -226,6 +291,87 @@
         </footer>
     </div>
     
+    <!-- Form Color Fix Script -->
+    <script>
+        // Force override MDL colors after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Override all MDL textfield colors
+            function fixFormColors() {
+                const textfields = document.querySelectorAll('.contact-form-card .mdl-textfield');
+                textfields.forEach(field => {
+                    const label = field.querySelector('.mdl-textfield__label');
+                    const input = field.querySelector('.mdl-textfield__input');
+                    
+                    if (label) {
+                        label.style.setProperty('color', '#95a5a6', 'important');
+                    }
+                    if (input) {
+                        input.style.setProperty('border-bottom-color', '#95a5a6', 'important');
+                        input.style.setProperty('color', '#2c3e50', 'important');
+                        input.style.setProperty('box-shadow', 'none', 'important');
+                        input.style.setProperty('font-family', '"Roboto", "Helvetica", "Arial", sans-serif', 'important');
+                        input.style.setProperty('font-size', '16px', 'important');
+                        input.style.setProperty('font-weight', '400', 'important');
+                    }
+                });
+            }
+            
+            // Run immediately
+            fixFormColors();
+            
+            // Run again after a short delay (in case MDL loads later)
+            setTimeout(fixFormColors, 100);
+            setTimeout(fixFormColors, 500);
+            
+            // Simple font fix for all inputs
+            function fixAllFonts() {
+                const allInputs = document.querySelectorAll('.contact-form-card input, .contact-form-card textarea, .contact-form-card label');
+                allInputs.forEach(input => {
+                    input.style.setProperty('font-family', '"Roboto", "Helvetica", "Arial", sans-serif', 'important');
+                    input.style.setProperty('font-size', '16px', 'important');
+                    input.style.setProperty('font-weight', '400', 'important');
+                });
+            }
+            
+            // Run font fix
+            fixAllFonts();
+            setTimeout(fixAllFonts, 500);
+            
+            // Add event listeners for focus/blur
+            const inputs = document.querySelectorAll('.contact-form-card .mdl-textfield__input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    const field = this.closest('.mdl-textfield');
+                    const label = field.querySelector('.mdl-textfield__label');
+                    if (label) {
+                        label.style.setProperty('color', '#f39c12', 'important');
+                    }
+                    this.style.setProperty('border-bottom-color', '#f1c40f', 'important');
+                    this.style.setProperty('border-bottom-width', '2px', 'important');
+                });
+                
+                input.addEventListener('blur', function() {
+                    const field = this.closest('.mdl-textfield');
+                    const label = field.querySelector('.mdl-textfield__label');
+                    if (this.value) {
+                        // Has value - dirty state
+                        if (label) {
+                            label.style.setProperty('color', '#7f8c8d', 'important');
+                        }
+                        this.style.setProperty('border-bottom-color', '#7f8c8d', 'important');
+                    } else {
+                        // Empty - default state
+                        if (label) {
+                            label.style.setProperty('color', '#95a5a6', 'important');
+                        }
+                        this.style.setProperty('border-bottom-color', '#95a5a6', 'important');
+                    }
+                    this.style.setProperty('border-bottom-width', '1px', 'important');
+                });
+            });
+        });
+    </script>
+
     <!-- Contact Form Script -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
