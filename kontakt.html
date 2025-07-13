@@ -81,6 +81,13 @@
             font-size: 16px !important;
             font-weight: 400 !important;
         }
+        
+        /* Hide send icon on mobile devices */
+        @media (max-width: 768px) {
+            .contact-submit-btn .material-icons {
+                display: none !important;
+            }
+        }
     </style>
     
     <!-- Navigation Script -->
