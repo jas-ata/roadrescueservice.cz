@@ -140,7 +140,7 @@
                     <div class="contact-form-card">
                         <h2>NAPIŠTE NÁM</h2>
                         
-                        <form id="contactForm" method="POST" action="send-email.php">
+                        <form id="contactForm" method="POST" action="send-email-simple.php">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" id="name" name="name" required>
                                 <label class="mdl-textfield__label" for="name">Vaše jméno</label>
@@ -384,7 +384,7 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="material-icons">hourglass_empty</i> ODESÍLÁM...';
             
-            fetch('send-email.php', {
+            fetch('send-email-simple.php', {
                 method: 'POST',
                 body: formData
             })

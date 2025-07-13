@@ -1,0 +1,12 @@
+==> error-phpfpm.log <==
+[13-Jul-2025 13:43:50 Europe/Prague] PHP Warning:  require_once(PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /data/www/roadrescueservice.cz/public_html/send-email.php on line 13
+[13-Jul-2025 13:43:50 Europe/Prague] PHP Fatal error:  require_once(): Failed opening required 'PHPMailer/src/Exception.php' (include_path='.:/usr/share/php') in /data/www/roadrescueservice.cz/public_html/send-email.php on line 13
+
+==> access-phpfpm.log <==
+62.245.94.163 -  [13/Jul/2025:13:43:50 +0200] POST https://roadrescueservice.cz/send-email.php 500 2932704 /data/www/roadrescueservice.cz/public_html/send-email.php (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36)
+
+==> access.log <==
+62.245.94.163 - - [13/Jul/2025:13:43:50 +0200] "POST /send-email.php HTTP/2.0" 500 71 "https://roadrescueservice.cz/kontakt.html" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+
+==> access-phpfpm.log <==
+127.0.0.1 -  [13/Jul/2025:13:44:01 +0200] GET -://-- 200 293

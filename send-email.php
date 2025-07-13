@@ -22,7 +22,7 @@ $subject_prefix = "Webový formulář - ";
 $smtp_host = "mail3.zcom.cz";
 $smtp_port = 465;
 $smtp_username = "info@roadrescueservice.cz";
-$smtp_password = "sps-dopravni";
+$smtp_password = ""; // Heslo odebráno z bezpečnostních důvodů
 
 // Kontrola, zda byl formulář odeslán
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
